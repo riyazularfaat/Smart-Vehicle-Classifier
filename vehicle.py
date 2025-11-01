@@ -4,6 +4,11 @@ Demonstrates OOP concepts: Inheritance, Encapsulation, Method Overriding,
 Protected and Private Members
 """
 
+# Module-level constants for classification
+SPEED_THRESHOLD = 50  # km/h - threshold for simple classification
+LOW_SPEED_THRESHOLD = 40  # km/h - threshold for low-speed vehicles
+HIGH_SPEED_THRESHOLD = 60  # km/h - threshold for high-speed vehicles
+
 
 class Vehicle:
     """Base class for all vehicles"""
@@ -160,8 +165,6 @@ def classify_vehicle(speed):
     Returns:
         str: Predicted vehicle type
     """
-    SPEED_THRESHOLD = 50
-    
     if speed < SPEED_THRESHOLD:
         return "Bike"
     else:
@@ -182,10 +185,10 @@ def classify_vehicle_advanced(speed, num_wheels=None):
     confidence = "Medium"
     
     # Primary classification based on speed
-    if speed < 40:
+    if speed < LOW_SPEED_THRESHOLD:
         predicted_type = "Bike"
         confidence = "High"
-    elif speed < 60:
+    elif speed < HIGH_SPEED_THRESHOLD:
         predicted_type = "Bike" if num_wheels == 2 else "Car"
         confidence = "Medium"
     else:
