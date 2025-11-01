@@ -1,53 +1,68 @@
-# Smart-Vehicle-Classifier
----
-## Description
-This project simulates a simple AI-based vehicle classifier using Object-Oriented ‎Programming (OOP). 
-It demonstrates **inheritance, protected and private members, method overriding**, ‎and **encapsulation.**
-The program manages two types of vehicles: **Car** and **Bike**. Each class inherits from a ‎base class Vehicle. 
-A simple classifier method predicts the type of vehicle based on its speed threshold.‎
+# Smart Vehicle Classifier
 
-## Task Statement
-Design and implement a simple program that classifies vehicles based on their type and ‎speed using Object-Oriented Programming (OOP) principles.‎
+An AI-based vehicle classifier demonstrating Object-Oriented Programming (OOP) concepts in Python.
 
-**You must:**‎
-‎1.‎	Create a base class Vehicle that stores vehicle type, name, and speed. 
+## Overview
 
-‎2.‎	Use **protected** and **private** attributes in the base class to demonstrate ‎encapsulation. 
+This project simulates a simple AI-based vehicle classifier using Object-Oriented Programming principles. It demonstrates:
 
-‎3.‎	Implement a method classify() that categorizes vehicles as **High-speed Vehicle** ‎if the speed is greater than 100, otherwise **Normal Vehicle**. 
+- **Inheritance**: Car and Bike classes inherit from a base Vehicle class
+- **Protected Members**: Using single underscore prefix (e.g., `_speed`, `_brand`)
+- **Private Members**: Using double underscore prefix for name mangling (e.g., `__id`)
+- **Method Overriding**: Subclasses override base class methods to provide specific behavior
+- **Encapsulation**: Using getter and setter methods to control access to attributes
+- **Polymorphism**: Same method names with different behaviors in different classes
 
-‎4.‎	Derive two subclasses — Car and Bike — from Vehicle. Each should override the ‎show_info() method to display detailed information. 
+The program manages two types of vehicles: **Car** and **Bike**, each inheriting from the base `Vehicle` class. A simple classifier method predicts the type of vehicle based on speed thresholds.
 
-‎5.‎	Read multiple inputs representing different vehicles, create corresponding objects, ‎and print their details along with their classification results.‎
+## Features
 
-## Input
-‎3‎
+### OOP Concepts Demonstrated
 
-Car Toyota 150‎
+1. **Inheritance**
+   - Base class `Vehicle` provides common functionality
+   - `Car` and `Bike` classes inherit from `Vehicle`
+   - Reuse of code through inheritance
 
-Bike Yamaha 90‎
+2. **Encapsulation**
+   - Private member: `__id` (name-mangled for privacy)
+   - Protected members: `_brand`, `_model`, `_speed`, `_type`
+   - Getter methods: `get_id()`, `get_brand()`, `get_speed()`, etc.
+   - Setter methods: `set_speed()` with validation
 
-Car Honda 120‎
+3. **Method Overriding**
+   - `display_info()` - overridden in Car and Bike classes
+   - `accelerate()` - overridden with vehicle-specific behavior
 
-#### Output
-Car Added: Toyota
+4. **Polymorphism**
+   - Same method interface, different implementations
+   - Runtime method resolution based on object type
 
-Bike Added: Yamaha
+### Vehicle Classification
 
-Car Added: Honda
+- **Simple Classifier**: Predicts vehicle type based on speed threshold (50 km/h)
+  - Speed < 50 km/h → Bike
+  - Speed ≥ 50 km/h → Car
 
-‎--- Vehicle Details ---‎
+- **Advanced Classifier**: Uses multiple features and confidence levels
 
-Type: Car, Name: Toyota, Speed: 150 km/h, Predicted: High-speed Vehicle
+## Installation
 
-Type: Bike, Name: Yamaha, Speed: 90 km/h, Predicted: Normal Vehicle
+No external dependencies required. Only Python 3.x is needed.
 
-Type: Car, Name: Honda, Speed: 120 km/h, Predicted: High-speed Vehicle
+```bash
+git clone https://github.com/riyazularfaat/Smart-Vehicle-Classifier.git
+cd Smart-Vehicle-Classifier
+```
 
+## Usage
 
-## Short Hint:
-Use a base class Vehicle with **protected** and **private** attributes. 
+Run the main demonstration:
 
-Create subclasses Car and Bike that override show_info() and add a simple speed-‎based classifier. 
+```bash
+python3 main.py
+```
 
-Speed above 100 is considered a "High-speed Vehicle".‎
+### Example Output
+
+```
